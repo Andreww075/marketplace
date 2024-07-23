@@ -26,7 +26,7 @@ const Header = ({ session }: { session: Session | null }) => {
 
       <nav className="flex items-center gap-4 *:rounded">
         <Link
-          href="/"
+          href="/new"
           className="border border-blue-600 text-blue-600 inline-flex gap-1 items-center py-1 px-4 mr-4"
         >
           <FontAwesomeIcon icon={faPlus} className="h-4" />
