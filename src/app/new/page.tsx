@@ -1,7 +1,13 @@
+'use client'
+
 //import AdForm from '@/components/ad-form'
-import React from "react";
+
+
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage, faLocationCrosshairs, faPlus } from "@fortawesome/free-solid-svg-icons";
+import Uploader from "@/components/uploader";
+import { UploadResponse } from "imagekit/dist/libs/interfaces";
 
 /*
 const locationDefault = {
@@ -10,8 +16,10 @@ const locationDefault = {
 }
 */
 const NewAdPage = () => {
+  const [files, setFiles] = useState<UploadResponse[]>([])
+
   return (
-    <form action="" className="max-w-xl mx-auto flex gap-8">
+    <form className="max-w-xl mx-auto flex gap-8">
       <div className="grow pt-8">
         <div className="bg-gray-100 p-4 rounded">
           <h2 className="text-center text-gray-600 uppercase text-xs font-bold">
@@ -19,10 +27,19 @@ const NewAdPage = () => {
           </h2>
           <div className="flex flex-col">
             <FontAwesomeIcon icon={faImage} className="h-24 text-gray-300" />
+
+            <Uploader onSuccess={file => {
+              setFiles(prev => [...prev, file])
+            }} />
+
             <button className="border border-blue-600 text-blue-600 rounded px-4 py-2 inline-flex gap-1 items-center justify-center">
               <FontAwesomeIcon icon={faPlus} className="" />
               <span>Add Photos</span>
             </button>
+
+            {files.map(file => (
+              <div key={file.fileId}>{file.url}</div>
+            ))}
           </div>
         </div>
 
