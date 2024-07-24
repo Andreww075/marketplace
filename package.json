@@ -17,6 +17,7 @@
     "@types/google.maps": "^3.55.11",
     "imagekit": "^5.0.1",
     "imagekitio-react": "^4.2.0",
+    "mongoose": "^8.5.1",
     "next": "14.2.5",
     "next-auth": "^4.24.7",
     "react": "^18",
