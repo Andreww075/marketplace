@@ -4,22 +4,16 @@
 
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faImage,
-  faLocationCrosshairs,
-  faPlus,
-} from "@fortawesome/free-solid-svg-icons";
-import Uploader from "@/components/uploader";
+import { faLocationCrosshairs } from "@fortawesome/free-solid-svg-icons";
 import { UploadResponse } from "imagekit/dist/libs/interfaces";
 import UploadArea from "@/components/upload-area";
 import AdTextInputs from "@/components/ad-text-inputs";
 
-/*
 const locationDefault = {
   lat: 59.432226005726896,
   lng: 18.057839558207103,
 }
-*/
+
 const NewAdPage = () => {
   const [files, setFiles] = useState<UploadResponse[]>([]);
 
@@ -36,14 +30,13 @@ const NewAdPage = () => {
               <span>Share Current Location</span>
             </button>
             <div className="mt-2 bg-gray-100 p-4 min-h-12 rounded text-gray-400 text-center">
-              Google maps here
+              Current Lo
             </div>
           </label>
         </div>
       </div>
 
       <div className="grow pt-2">
-        <h1>List Your Product</h1>
         <AdTextInputs />
         <button className="bg-blue-600 text-white rounded px-6 py-2">
           Publish
