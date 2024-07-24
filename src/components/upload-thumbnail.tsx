@@ -8,7 +8,7 @@ type Props = {
 };
 
 const UploadThumbnail = ({ file, onClick }: Props) => {
-  function handleClick(ev:React.MouseEvent) {
+  function handleClick(ev: React.MouseEvent) {
     if (onClick) {
       ev.preventDefault();
       return onClick();
@@ -16,13 +16,13 @@ const UploadThumbnail = ({ file, onClick }: Props) => {
     location.href = file.url;
   }
 
-  if (file.fileType === 'image') {
+  if (file.fileType === "image") {
     return (
       <a onClick={handleClick} target="_blank">
         <MyImage
           width={300}
           height={300}
-          alt={'product thumbnail'}
+          alt={"product thumbnail"}
           aiCrop={true}
           src={file.filePath}
         />
@@ -30,8 +30,7 @@ const UploadThumbnail = ({ file, onClick }: Props) => {
     );
   }
 
-  
-  return <div>{file.url} &raquo;</div>
+  return <div>{file.url} &raquo;</div>;
 };
 
 export default UploadThumbnail;
