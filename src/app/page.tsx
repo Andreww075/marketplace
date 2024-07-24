@@ -16,17 +16,14 @@ export default function Home() {
     if (!params) {
       params = new URLSearchParams();
     }
-
     if (!params.get("center")) {
       return;
     }
-
     if (!params.has("radius")) {
       params.set("radius", defaultRadius.toString());
     }
-
-    const url = `/api/ads?${params?.toString() || ""}`;
-    fetch(url, { method: "GET" }).then((response) => {
+    const url = `/api/ads?${params?.toString()}`;
+    fetch(url).then((response) => {
       response.json().then((adsDocs) => {
         setAds(adsDocs);
         setAdsParams(params);

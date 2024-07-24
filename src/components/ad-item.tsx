@@ -14,7 +14,6 @@ const AdItem = ({ ad }: { ad: Ad }) => {
           <Link href={`/ad/${ad._id}`} className="absolute inset-0"></Link>
         </div>
       )}
-
       <div>
         <p className="mt-1 font-bold">${ad.price}</p>
         <Link href={`/ad/${ad._id}`}>{ad.title}</Link>

@@ -10,19 +10,17 @@ type Props = {
   action: (data: FormData) => void;
 };
 
-const SearchForm = ({ action }: Props) => {
+export default function SearchForm({ action }: Props) {
   const [radius, setRadius] = useState(defaultRadius);
   const [center, setCenter] = useState<Location | null>(null);
   const [prevCenter, setPrevCenter] = useState<Location | null>(null);
   const formRef = useRef<HTMLFormElement | null>(null);
-
   useEffect(() => {
     if (center && !prevCenter) {
       formRef.current?.requestSubmit();
       setPrevCenter(center);
     }
   }, [center]);
-
   return (
     <form
       ref={formRef}
@@ -79,6 +77,4 @@ const SearchForm = ({ action }: Props) => {
       <SubmitButton>Search</SubmitButton>
     </form>
   );
-};
-
-export default SearchForm;
+}
