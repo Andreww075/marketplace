@@ -8,7 +8,7 @@ const SubmitButton = ({children}: {children: ReactNode}) => {
     <>
       <button
         disabled={pending}
-        className={(pending ? 'bg-gray-400' : 'bg-blue-600') + " mt-2 text-white px-6 py-2 rounded"}>
+        className={(pending ? 'bg-gray-400' : 'bg-blue-600') + " mt-4 text-white px-6 py-2 rounded w-full"}>
         {pending && (
           <span>Saving...</span>
         )}

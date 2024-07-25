@@ -20,9 +20,9 @@ const MyAdsPage = async () => {
   const adsDocs = await AdModel.find({ userEmail: email });
 
   return (
-    <div className="container my-8 mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Your ads</h1>
-      <div className="grid grid-cols-4 gap-x-2 gap-y-4">
+    <div className="sm:container sm:my-8 sm:mx-auto sm:bg-white">
+      <h1 className="text-2xl font-bold mb-4 sm:text-3xl text-center">Your ads</h1>
+      <div className="w-full gap-y-10 flex flex-col items-center sm:grid sm:grid-cols-4 sm:gap-x-2 sm:gap-y-4">
         {adsDocs?.map((ad) => (
           <AdItem key={ad._id} ad={ad} />
         ))}

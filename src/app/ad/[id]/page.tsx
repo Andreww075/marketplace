@@ -30,10 +30,10 @@ const SingleAdPage = async (args: Props) => {
 
   return (
     <div className="flex absolute inset-0 top-16">
-      <div className="w-3/5 grow bg-black text-white flex flex-col relative">
+      <div className="w-2/5 sm:w-3/2 grow bg-black text-white flex flex-col relative">
         <Gallery files={adDoc.files} />
       </div>
-      <div className="w-2/5 p-8 grow shrink-0 overflow-y-scroll">
+      <div className="w-3/5 sm:w-2/5 p-8 grow shrink-0 overflow-y-scroll">
         <h1 className="text-lg font-bold">{adDoc.title}</h1>
         {session && session?.user?.email === adDoc.userEmail && (
           <div className="mt-2 flex gap-2">

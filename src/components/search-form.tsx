@@ -25,7 +25,7 @@ export default function SearchForm({ action }: Props) {
     <form
       ref={formRef}
       action={action}
-      className="bg-white grow w-1/4 p-4 border-r flex flex-col gap-4 sticky top-0"
+      className="sm:bg-white sm:grow sm:w-1/4 p-4 sm:border-r sm:flex sm:flex-col sm:gap-4 sm:sticky sm:top-0"
     >
       <input name="phrase" type="text" placeholder="Search Marketplace" />
       <div className="flex flex-col gap-0">

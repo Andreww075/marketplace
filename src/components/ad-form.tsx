@@ -49,7 +49,7 @@ const AdForm = ({
   return (
     <form
       action={handleSubmit}
-      className="max-w-xl mx-auto grid grid-cols-2 gap-12"
+      className="flex flex-col items-center py-10 gap-y-10 sm:max-w-xl sm:mx-auto sm:grid sm:grid-cols-2 sm:gap-12"
     >
       <div className="grow pt-8">
         <UploadArea files={files} setFiles={setFiles} />

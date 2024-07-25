@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const AdItem = ({ ad }: { ad: Ad }) => {
   return (
-    <div className="border-red-500 min-h-24 flex flex-col justify-start">
+    <div className="sm:min-h-24 sm:flex-col sm:justify-start">
       {ad.files?.length > 0 && (
         <div className="rounded-md overflow-hidden relative">
           <UploadThumbnail onClick={() => {}} file={ad.files[0]} />
