@@ -1,7 +1,7 @@
 'use server';
 
 import { Location } from "@/components/location-picker";
-import { authOptions } from "@/libs/authOptions";
+import { authOptions } from "@/utils/authOptions";
 import { AdModel } from "@/models/Ad";
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";

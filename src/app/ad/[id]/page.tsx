@@ -4,7 +4,7 @@ import React from "react";
 import DeleteAdButton from "@/components/delete-ad-button";
 import LocationMap from "@/components/location-map";
 import Gallery from "@/components/gallery";
-import { authOptions } from "@/libs/authOptions";
+import { authOptions } from "@/utils/authOptions";
 import { connect, formatDate, formatMoney } from "@/libs/helpers";
 import { AdModel } from "@/models/Ad";
 import { faPencil } from "@fortawesome/free-solid-svg-icons";

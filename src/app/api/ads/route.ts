@@ -1,4 +1,4 @@
-import { authOptions } from "@/libs/authOptions";
+import { authOptions } from "@/utils/authOptions";
 import { connect } from "@/libs/helpers";
 import { Ad, AdModel } from "@/models/Ad";
 import { FilterQuery, PipelineStage } from "mongoose";

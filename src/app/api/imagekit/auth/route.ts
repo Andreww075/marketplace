@@ -1,4 +1,4 @@
-import { authOptions } from "@/libs/authOptions";
+import { authOptions } from "@/utils/authOptions";
 import { getServerSession } from "next-auth";
 import ImageKit from 'imagekit';
 

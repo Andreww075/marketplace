@@ -2,7 +2,7 @@
 
 import React from "react";
 import AdForm from "@/components/ad-form";
-import { authOptions } from "@/libs/authOptions";
+import { authOptions } from "@/utils/authOptions";
 import { connect } from "@/libs/helpers";
 import { AdModel } from "@/models/Ad";
 import { getServerSession } from "next-auth";
