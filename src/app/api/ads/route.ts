@@ -1,7 +1,7 @@
 import { authOptions } from "@/utils/authOptions";
 import { connect } from "@/libs/helpers";
 import { Ad, AdModel } from "@/models/Ad";
-import { FilterQuery, PipelineStage } from "mongoose";
+import { FilterQuery } from "mongoose";
 import { getServerSession } from "next-auth";
 
 export async function GET(req: Request) {
@@ -12,11 +12,8 @@ export async function GET(req: Request) {
   const category = searchParams.get("category");
   const min = searchParams.get("min");
   const max = searchParams.get("max");
-  const radius = searchParams.get("radius");
-  const center = searchParams.get("center");
 
   const filter: FilterQuery<Ad> = {};
-  const aggregationSteps: PipelineStage[] = [];
 
   if (phrase) {
     filter.title = { $regex: ".*" + phrase + ".*", $options: "i" };
@@ -29,31 +26,6 @@ export async function GET(req: Request) {
   if (min && !max) filter.price = { $gte: min };
   if (max && !min) filter.price = { $lte: max };
   if (min && max) filter.price = { $gte: min, $lte: max };
-
-  if (radius && center) {
-    const coords = center.split("-");
-    const lat = parseFloat(coords[0]);
-    const lng = parseFloat(coords[2]);
-    aggregationSteps.push({
-      $geoNear: {
-        near: {
-          type: "Point",
-          coordinates: [lng, lat],
-        },
-        distanceField: "distance",
-        maxDistance: parseInt(radius),
-        spherical: true,
-      },
-    });
-  }
-
-  aggregationSteps.push({
-    $match: filter,
-  });
-
-  aggregationSteps.push({
-    $sort: { createdAt: -1 },
-  });
 
   const adsDocs = await AdModel.find(filter, null, { sort: { createdAt: -1 } });
   return Response.json(adsDocs);
