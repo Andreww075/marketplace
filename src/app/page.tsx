@@ -61,7 +61,7 @@ export default function Home() {
       <SearchForm action={handleSearch} />
       <div className="w-full grow sm:p-4 sm:bg-gray-100 sm:w-3/4">
         <h2 className="font-bold mt-2 mb-4 text-center text-2xl sm:text-3xl">
-          {formDirty ? "Search results" : "Latest ads"}
+          {formDirty ? "Search results" : "Latest ads" + '(Please, disabled your adblock 👌)'}
         </h2>
         <div className="w-full flex items-center flex-col gap-y-10 sm:grid md:grid-cols-4 sm:gap-x-4 sm:gap-y-6">
           {ads && ads.map((ad) => <AdItem key={ad._id} ad={ad} />)}
